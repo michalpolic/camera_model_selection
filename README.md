@@ -14,6 +14,9 @@ SfM pipelines use many configuration parameters that are hard to set in practice
 * Using too complex model may lead to over-fitting the data and result in degeneracies.  
 * The ultimate goal of a camera model selection method is to select a ”good” model where (i) all images are registered, (ii) the reprojection error is minimal, and (iii) the number of parameters is small. This goal is very hard to reach in practice.
 
+<p align="center">
+<img src="web/images/model_comparison.png" height="200"/>
+</p>
 
 # Contribution
 We present extensive comparison of standard, robust, and geometrical information criteria on the importatnt task of radial distortion model selection. Motivated by bad results we present a new way to
@@ -25,10 +28,22 @@ We present extensive comparison of standard, robust, and geometrical information
 ## The idea
 The idea is to create unique quality measurement for the reconstructions form images. We propose to use the accuracy of calculated parameters (AC), i.e., the accuracy of camera poses and the positions of points in 3D, as such scene quality measurement. The quality measurement will provide an order of suitability of camera models and select the best one, i.e., the camera model leading to the most accurate reconstruction.
 
-We propagate the accuracy of 2D observations in images into the 3D scene 
+We can propagate the accuracy of 2D observations in images into the 3D scene, see <a href="https://michalpolic.github.io/usfm.github.io">USfM framework</a> for details. 
 <p align="center">
 <img src="web/images/uncertainty.png" height="200"/>
 </p>
+
+To compare the suitability of several camera models, we need to calculate a small sub-reconstructions from a subset of images and propagate the accuracy of observations into 3D scenes. 
+
+The comparable covariance matrices are achieved by (i) aligning coordinate systems of sub-reconstructions before uncertaitny propagation and (ii) fixing the gauge of covariance matrix using suitable S-transoformation. 
+
+
+
+
+Proapgate the accuracy  and all individual camera models. 
+evaluate the accuracy for small reconstructions for all camera models.
+
+
 align the coordinate system by aligning common camra poses and fix the gauge of covariance matrix.
 
 
