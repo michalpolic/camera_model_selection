@@ -1,4 +1,4 @@
-<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/grPFAf0Ul3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center"><iframe width="1024" height="576" src="https://www.youtube.com/embed/grPFAf0Ul3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 <p>
 
@@ -25,12 +25,12 @@ We present extensive comparison of standard, robust, and geometrical information
 ## The idea
 The idea is to create unique quality measurement for the reconstructions form images. We propose to use the accuracy of calculated parameters (AC), i.e., the accuracy of camera poses and the positions of points in 3D, as such scene quality measurement. The quality measurement will provide an order of suitability of camera models and select the best one, i.e., the camera model leading to the most accurate reconstruction.
 
-
+We propagate the accuracy of 2D observations in images into the 3D scene 
 <p align="center">
-<img src="imgs/arrow_text_down.png"  height="150"/>
-<img src="imgs/phone_identical_no_arrows.jpg" height="150"/>
-<img src="imgs/arrow_text_down.png"  height="150"/>
+<img src="web/imgs/uncertainty.png" height="200"/>
 </p>
+align the coordinate system by aligning common camra poses and fix the gauge of covariance matrix.
+
 
 Our idea is to **roll the shutters in the opposite directions**.  
 
