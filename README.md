@@ -8,7 +8,7 @@ For more information see <a href="http://openaccess.thecvf.com/content_CVPR_2020
 </p>
 
 # Motivation
-SfM pipelines use many parameters that are hard to set in practice. A crucial parameter to set is the camera model to be used. In fact, every geometrical solver is derived for one particular camera model and the nonextistence of automatic metod for model selection force the user to choose it manualy.
+SfM pipelines use many configuration parameters that are hard to set in practice. A crucial parameter to set is the camera model to be used. In fact, every geometrical solver is derived for one particular camera model and the nonextistence of automatic metod for model selection force the user to choose it manualy.
   
 * Using a too simple camera model may lead to under-fitting and inaccurate reconstruction.
 * Using too complex model may lead to over-fitting the data and result in degeneracies.  
