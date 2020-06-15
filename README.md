@@ -14,6 +14,9 @@ SfM pipelines use many configuration parameters that are hard to set in practice
 * Using too complex model may lead to over-fitting the data and result in degeneracies.  
 * The ultimate goal of a camera model selection method is to select a ”good” model where (i) all images are registered, (ii) the reprojection error is minimal, and (iii) the number of parameters is small. This goal is very hard to reach in practice.
 
+<p align="center">
+<img src="web/images/model_comparison.png" height="200"/>
+</p>
 
 # Contribution
 We present extensive comparison of standard, robust, and geometrical information criteria on the importatnt task of radial distortion model selection. Motivated by bad results we present a new way to
@@ -25,41 +28,31 @@ We present extensive comparison of standard, robust, and geometrical information
 ## The idea
 The idea is to create unique quality measurement for the reconstructions form images. We propose to use the accuracy of calculated parameters (AC), i.e., the accuracy of camera poses and the positions of points in 3D, as such scene quality measurement. The quality measurement will provide an order of suitability of camera models and select the best one, i.e., the camera model leading to the most accurate reconstruction.
 
-We propagate the accuracy of 2D observations in images into the 3D scene 
+We can propagate the accuracy of 2D observations in images into the 3D scene, see <a href="https://michalpolic.github.io/usfm.github.io">USfM framework</a> for details. 
 <p align="center">
 <img src="web/images/uncertainty.png" height="200"/>
 </p>
-align the coordinate system by aligning common camra poses and fix the gauge of covariance matrix.
 
+To compare the suitability of several camera models, we need to calculate a small sub-reconstructions from a subset of images and propagate the accuracy of observations into 3D scenes. 
 
-Our idea is to **roll the shutters in the opposite directions**.  
+The comparable covariance matrices are achieved by (i) aligning coordinate systems of sub-reconstructions before uncertaitny propagation and (ii) fixing the gauge of covariance matrix using suitable S-transoformation. 
 
-<p align="center">
-<img src="imgs/arrow_text_down.png"  height="150"/>
-<img src="imgs/phone_opposite_no_arrows.jpg"  height="150"/>
-<img src="imgs/arrow_text_up.png"  height="150"/>
-</p>
+Please see our <a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Polic_Uncertainty_Based_Camera_Model_Selection_CVPR_2020_paper.html">paper</a> for more details.
 
-Having such differences in the distortion allows us to compute the motion of the device from a few sparse correspondences.  
-  
-The motion parameters can then be used to e.g. undistort the image:  
-
-<p align="center">
-<img src="imgs/re_rot4.jpg" height="300" alt="down"/>
-</p>
 
 ## Examples
 
-Here is another example of identical RS readout directions:
+The camera model for real data is unknow and therefore we evaluated correctnes of this methos on large amount of various synthetic scenes. The folowing sucess rate of correctly estimated camera model was evaluated from 72000 synthetic datasets simulating real cameras and 3D scenes, for different camera models, outlier and noise contamination.
 
-<p float="left" align="center">
-<img src="imgs/anim_down.gif"  height="150"/>
-<img src="imgs/arrow_text_down.png"  height="150"/>
-<img src="imgs/anim_down.gif"  height="150"/>
-<img src="imgs/arrow_text_down.png"  height="150"/>
+<p align="center">
+<img src="web/images/synthetic_01.png" height="200"/>
+<img src="web/images/synthetic_02.png" height="200"/>
 </p>
 
-and opposite directions:
+
+
+-----------------------------------------------------------------
+TODO:
 
 <p float="left" align="center">
 <img src="imgs/anim_down.gif"  height="150"/>
