@@ -8,25 +8,26 @@ For more information see <a href="http://openaccess.thecvf.com/content_CVPR_2020
 </p>
 
 # Motivation
-SfM pipelines use many parameters that are hard to set in practice. A crucial parameter to set is the camera model to be used. In fact, every geometrical solver is derived for one particular camera model and the nonextistence of automatic metod for model selection force the user to choose it.
+SfM pipelines use many parameters that are hard to set in practice. A crucial parameter to set is the camera model to be used. In fact, every geometrical solver is derived for one particular camera model and the nonextistence of automatic metod for model selection force the user to choose it manualy.
   
-* Using a too simple camera model may lead to under-fitting and inaccurate reconstruction and too complex model may lead to over-fitting the data and result in degeneracies.  
-* The ultimate goal of a camera model selection method is to select a ”good” model where (i) all images are registered, (ii) the reprojection error is minimal, and (iii) the number of parameters is small. 
-* This goal is very hard to reach in practice.
+* Using a too simple camera model may lead to under-fitting and inaccurate reconstruction.
+* Using too complex model may lead to over-fitting the data and result in degeneracies.  
+* The ultimate goal of a camera model selection method is to select a ”good” model where (i) all images are registered, (ii) the reprojection error is minimal, and (iii) the number of parameters is small. This goal is very hard to reach in practice.
 
 
 # Contribution
-We present a 
-* comparison of standard, robust, and geometrical information criteria on the importatnt task of radial distortion model selection.
+We present extensive comparison of standard, robust, and geometrical information criteria on the importatnt task of radial distortion model selection.
 
-Motivated by the poor performance of these state-of-the-art approaches we present a new way to
-* Select the camera model leading to the most accurate reconstruction, e.g., the most accurate camera poses and positions of points in 3D
-* Significantly increase in the reconstruction quality as well as speedup of the reconstruction process
+We present a new way to
+* Significantly increase in the reconstruction quality as well as speedup of the reconstruction process by automatic camera selection
 * Evaluate the quality of the scene by Accuracy-based Criterion (AC)
 * Propose model Selection method (ACS) and fine tuned learned LACS method for radial distortion selection
 
 
 ## The idea
+Select the camera model leading to the most accurate reconstruction, e.g., the most accurate camera poses and positions of points in 3D.
+
+
 If a device ( e.g. a smartphone) with two RS cameras moves, the images contain distortions. In current devices the cameras both use identical readout directions, which causes the distortions to look identical.
 
 <p align="center">
