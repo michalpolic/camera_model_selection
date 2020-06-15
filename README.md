@@ -17,13 +17,13 @@ SfM pipelines use many parameters that are hard to set in practice. A crucial pa
 
 # Contribution
 We present extensive comparison of standard, robust, and geometrical information criteria on the importatnt task of radial distortion model selection. Motivated by bad results we present a new way to
-* Significantly increase in the reconstruction quality as well as speedup of the reconstruction process by automatic camera selection
+* Significantly increase in the reconstruction quality as well as speedup of the reconstruction process by automatic camera model selection
 * Evaluate the quality of the scene by Accuracy-based Criterion (AC)
-* Propose model Selection method (ACS) and fine tuned learned LACS method for radial distortion selection
+* Propose model Selection method (ACS) and fine tuned learned LACS method for radial distortion model selection
 
 
 ## The idea
-Propose the quality measurement as the accuracy of the scene parameters and select the camera model leading to the most accurate reconstruction, e.g., the recosntruction with the most accurate camera poses and positions of points in 3D.
+The idea is to create unique quality measurement for the reconstructions form images. We propose to use the accuracy of calculated parameters (AC), i.e., the accuracy of camera poses and the positions of points in 3D, as such scene quality measurement. The quality measurement will provide an order of suitability of camera models and select the best one, i.e., the camera model leading to the most accurate reconstruction.
 
 
 <p align="center">
