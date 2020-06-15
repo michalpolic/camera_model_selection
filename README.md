@@ -27,7 +27,7 @@ The idea is to create unique quality measurement for the reconstructions form im
 
 We propagate the accuracy of 2D observations in images into the 3D scene 
 <p align="center">
-<img src="web/imgs/uncertainty.png" height="200"/>
+<img src="web/images/uncertainty.png" height="200"/>
 </p>
 align the coordinate system by aligning common camra poses and fix the gauge of covariance matrix.
 
