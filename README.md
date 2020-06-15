@@ -8,7 +8,7 @@ For more information see <a href="http://openaccess.thecvf.com/content_CVPR_2020
 </p>
 
 # Motivation
-SfM pipelines use many parameters that are hard to set in practice. A crucial parameter to set is the camera model to be used. In fact, every absolute and relative pose solver is derived for one particular camera model and the user has to choose it.
+SfM pipelines use many parameters that are hard to set in practice. A crucial parameter to set is the camera model to be used. In fact, every geometrical solver is derived for one particular camera model and the nonextistence of automatic metod for model selection force the user to choose it.
   
 * Using a too simple camera model may lead to under-fitting and inaccurate reconstruction and too complex model may lead to over-fitting the data and result in degeneracies.  
 * The ultimate goal of a camera model selection method is to select a ”good” model where (i) all images are registered, (ii) the reprojection error is minimal, and (iii) the number of parameters is small. 
