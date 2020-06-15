@@ -1,10 +1,10 @@
-<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/SubN2Nralt8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/grPFAf0Ul3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 <p>
 
 This is a project page dedicated to our CVPR 2020 paper.<br><br>
 
-For more information see the paper <a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Polic_Uncertainty_Based_Camera_Model_Selection_CVPR_2020_paper.html">here</a><br><br>
+For more information see the paper <a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Polic_Uncertainty_Based_Camera_Model_Selection_CVPR_2020_paper.html">here</a> and <a href="http://147.32.71.15">see our demo website</a><br><br>
 </p>
 
 # Motivation
