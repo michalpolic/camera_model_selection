@@ -8,23 +8,23 @@ For more information see <a href="http://openaccess.thecvf.com/content_CVPR_2020
 </p>
 
 # Motivation
-Majority of cameras use rolling shutter to capture images and videos today. When a rolling shutter camera moves relative to a scene, such as during hand held video capture or a camera mounted on a vehicle, the images become distorted. These distortions cause visual as well as computational issues.  
+SfM pipelines use many parameters that are hard to set in practice. A crucial parameter to set is the camera model to be used. In fact, every absolute and relative pose solver is derived for one particular camera model and the user has to choose it.
   
-* Despite almost two decades of research, image distortions caused by camera motion remain an issue.  
-* It is common to have multiple cameras on a single device - smartphones, cars, head trackers.
-* Few methods focus on using images from two or more cameras mounted on the same device. 
-* No previous method is capable of utilizing two RS images captured by cameras that are mounted close together - such as on a smartphone.
+* Using a too simple camera model may lead to under-fitting and inaccurate reconstruction and too complex model may lead to over-fitting the data and result in degeneracies.  
+* The ultimate goal of a camera model selection method is to select a ”good” model where (i) all images are registered, (ii) the reprojection error is minimal, and (iii) the number of parameters is small. 
+* This goal is very hard to reach in practice.
 
 
-  
 # Contribution
-We present a new way to
-* Deal robustly with even extreme RS distortions on multi-camera devices
-* Utilize those distortions to compute the motion of the device
-* Remove the RS distortions caused by any type of motion
-* Improve RS SfM, generate depth maps
+We present a 
+* comparison of standard, robust, and geometrical information criteria on the importatnt task of radial distortion model selection.
 
-All this is facilitated by using different readout directions for each camera. This is easily achievable e.g. by rotating one of the sensors or changing the direction of the electronical shutter.
+Motivated by the poor performance of these state-of-the-art approaches we present a new way to
+* Select the camera model leading to the most accurate reconstruction, e.g., the most accurate camera poses and positions of points in 3D
+* Significantly increase in the reconstruction quality as well as speedup of the reconstruction process
+* Evaluate the quality of the scene by Accuracy-based Criterion (AC)
+* Propose model Selection method (ACS) and fine tuned learned LACS method for radial distortion selection
+
 
 ## The idea
 If a device ( e.g. a smartphone) with two RS cameras moves, the images contain distortions. In current devices the cameras both use identical readout directions, which causes the distortions to look identical.
