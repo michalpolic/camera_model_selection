@@ -37,44 +37,22 @@ To compare the suitability of several camera models, we need to calculate a smal
 
 The comparable covariance matrices are achieved by (i) aligning coordinate systems of sub-reconstructions before uncertaitny propagation and (ii) fixing the gauge of covariance matrix using suitable S-transoformation. 
 
+Please see our <a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Polic_Uncertainty_Based_Camera_Model_Selection_CVPR_2020_paper.html">paper</a> for more details.
 
-
-
-Proapgate the accuracy  and all individual camera models. 
-evaluate the accuracy for small reconstructions for all camera models.
-
-
-align the coordinate system by aligning common camra poses and fix the gauge of covariance matrix.
-
-
-Our idea is to **roll the shutters in the opposite directions**.  
-
-<p align="center">
-<img src="imgs/arrow_text_down.png"  height="150"/>
-<img src="imgs/phone_opposite_no_arrows.jpg"  height="150"/>
-<img src="imgs/arrow_text_up.png"  height="150"/>
-</p>
-
-Having such differences in the distortion allows us to compute the motion of the device from a few sparse correspondences.  
-  
-The motion parameters can then be used to e.g. undistort the image:  
-
-<p align="center">
-<img src="imgs/re_rot4.jpg" height="300" alt="down"/>
-</p>
 
 ## Examples
 
-Here is another example of identical RS readout directions:
+The camera model for real data is unknow and therefore we evaluated correctnes of this methos on large amount of various synthetic scenes. The folowing sucess rate of correctly estimated camera model was evaluated from 72000 synthetic datasets simulating real cameras and 3D scenes, for different camera models, outlier and noise contamination.
 
-<p float="left" align="center">
-<img src="imgs/anim_down.gif"  height="150"/>
-<img src="imgs/arrow_text_down.png"  height="150"/>
-<img src="imgs/anim_down.gif"  height="150"/>
-<img src="imgs/arrow_text_down.png"  height="150"/>
+<p align="center">
+<img src="web/images/synthetic_01.png" height="200"/>
+<img src="web/images/synthetic_02.png" height="200"/>
 </p>
 
-and opposite directions:
+
+
+-----------------------------------------------------------------
+TODO:
 
 <p float="left" align="center">
 <img src="imgs/anim_down.gif"  height="150"/>
