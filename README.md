@@ -55,8 +55,10 @@ Please see our <a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Poli
 The camera model for real data is unknow and therefore we evaluated correctnes of this methos on large amount of various synthetic scenes. The folowing sucess rate of correctly estimated camera model was evaluated from 72000 synthetic datasets simulating real cameras and 3D scenes, for different camera models, outlier and noise contamination.
 
 <p align="center">
-<img src="web/images/synthetic_01.png" height="200"/>
-<img src="web/images/synthetic_02.png" height="200"/>
+  <img src="web/images/synthetic_01.png" height="200"/>
+</p>
+<p align="center"> 
+  <img src="web/images/synthetic_02.png" height="200"/>
 </p>
 
 
