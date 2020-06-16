@@ -1,4 +1,4 @@
-<p align="center"><iframe id="intro_movie" width="256" src="https://www.youtube.com/embed/grPFAf0Ul3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center"><iframe id="intro_movie" width="256" height="144" src="https://www.youtube.com/embed/grPFAf0Ul3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 <p>
 
@@ -7,6 +7,7 @@ window.addEventListener('load', function () {
   var w = window.outerWidth;
   if (w > 560)
     document.getElementById("intro_movie").width = "560";
+    document.getElementById("intro_movie").width = "315";
   end
 });
 </script>
