@@ -24,6 +24,9 @@ We present an extensive comparison of standard, robust, and geometrical informat
 * Evaluate the quality of the scene by Accuracy-based Criterion (AC)
 * Propose a model Selection method (ACS) and fine-tuned learned LACS method for radial distortion model selection
 
+<p align="center">
+  <img src="web/images/terrains_scene.png" width="90%" style="object-fit: contain;"/>
+</p>
 
 ## The idea
 The idea is to create a unique quality measurement for 3D reconstructions from images. We propose to use the accuracy of calculated parameters (AC), i.e., the accuracy of camera poses and the positions of points in 3D, as the scene quality measurement. The quality measure will provide an order of suitability of camera models and select the best one, i.e., the camera model leading to the most accurate reconstruction.
@@ -49,10 +52,6 @@ The "good" camera model for real data is rarely known, and therefore we evaluate
 </p>
 
 The real experiments can be evaluated by yourself on <a href="http://147.32.71.15">DEMO WEBPAGE</a>. We provide here two examples of selected camera models for wide known datasets, <a href="https://www.eth3d.net">ETH3D dataset</a> and <a href="http://www.cvlibs.net/datasets/kitti">KITTI dataset</a>.
-
-<p align="center">
-  <img src="web/images/terrains_scene.png" width="90%" style="object-fit: contain;"/>
-</p>
 
 <p align="center">
   <img src="web/images/kitty_scene.png" width="90%" style="object-fit: contain;"/>
