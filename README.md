@@ -2,16 +2,6 @@
 </p>
 <p>
 
-<script>
-window.addEventListener('load', function () {
-  var w = window.outerWidth;
-  if (w > 560)
-    document.getElementById("intro_movie").width = "560";
-    document.getElementById("intro_movie").height = "315";
-  end
-});
-</script>
-
 This is a project page dedicated to our CVPR 2020 paper.<br><br>
 
 For more information see <a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Polic_Uncertainty_Based_Camera_Model_Selection_CVPR_2020_paper.html">the paper</a> and <a href="http://147.32.71.15">our demo website</a><br><br>
@@ -40,7 +30,7 @@ The idea is to create unique quality measurement for the reconstructions form im
 
 We can propagate the accuracy of 2D observations in images into the 3D scene, see <a href="https://michalpolic.github.io/usfm.github.io">USfM framework</a> for details. 
 <p align="center">
-<img src="web/images/uncertainty.png" height="200"/>
+<img src="web/images/uncertainty.png" width="90%" style="object-fit: contain;"/>
 </p>
 
 To compare the suitability of several camera models, we need to calculate a small sub-reconstructions from a subset of images and propagate the accuracy of observations into 3D scenes. 
@@ -55,18 +45,17 @@ Please see our <a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Poli
 The camera model for real data is unknow and therefore we evaluated correctnes of this methos on large amount of various synthetic scenes. The folowing sucess rate of correctly estimated camera model was evaluated from 72000 synthetic datasets simulating real cameras and 3D scenes, for different camera models, outlier and noise contamination.
 
 <p align="center">
-  <img src="web/images/synthetic_01.png" height="200"/>
+  <img src="web/images/synthetic_01.png" width="90%" style="object-fit: contain;"/>
 </p>
 
-The real experiments can be evaluated by yourself on DEMO WEBPAGE. We provide here some examples of selected camera models for wide known datasets.
+The real experiments can be evaluated by yourself on <a href="http://147.32.71.15">DEMO WEBPAGE</a>. We provide here some examples of selected camera models for wide known datasets.
 
-TOOD: update image examples
 <p align="center">
-  <img src="web/images/synthetic_01.png" width="90%"/>
+  <img src="web/images/terrains_scene.png" width="90%" style="object-fit: contain;"/>
 </p>
 
 <p align="center">
-  <img src="web/images/synthetic_01.png" height="90%"/>
+  <img src="web/images/kitty_scene.png" width="90%" style="object-fit: contain;"/>
 </p>
 
 
@@ -77,3 +66,17 @@ TODO ???
 
 ## License
 The codes are realeased under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT licence</a>.
+
+
+<script>
+window.addEventListener('load', function () {
+  var w = window.outerWidth;
+  if (w > 560)
+    document.getElementById("intro_movie").width = "560";
+    document.getElementById("intro_movie").height = "315";
+  end
+});
+</script>
+
+
+
