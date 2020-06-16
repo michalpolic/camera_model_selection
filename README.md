@@ -7,7 +7,7 @@ window.addEventListener('load', function () {
   var w = window.outerWidth;
   if (w > 560)
     document.getElementById("intro_movie").width = "560";
-    document.getElementById("intro_movie").width = "315";
+    document.getElementById("intro_movie").height = "315";
   end
 });
 </script>
