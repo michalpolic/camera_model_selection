@@ -1,6 +1,15 @@
-<p align="center"><iframe width="256" height="144" src="https://www.youtube.com/embed/grPFAf0Ul3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center"><iframe id="intro_movie" width="256" src="https://www.youtube.com/embed/grPFAf0Ul3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 <p>
+
+<script>
+window.addEventListener('load', function () {
+  var w = window.outerWidth;
+  if (w > 560)
+    document.getElementById("intro_movie").width = "560";
+  end
+});
+</script>
 
 This is a project page dedicated to our CVPR 2020 paper.<br><br>
 
@@ -51,86 +60,9 @@ The camera model for real data is unknow and therefore we evaluated correctnes o
 
 
 
------------------------------------------------------------------
-TODO:
-
-<p float="left" align="center">
-<img src="imgs/anim_down.gif"  height="150"/>
-<img src="imgs/arrow_text_down.png" height="150"/>
-<img src="imgs/anim_up.gif" height="150"/>
-<img src="imgs/arrow_text_up.png" height="150"/>
-</p>
-
-We can warp both input images and then combine them to obtain a more complete undistorted image:
-
-<p align="center">
-<img src="imgs/rot11_combined_res.jpg" height="300"/>
-</p>
-
-For smartphones it is typical that one camera has a different FOV due to e.g. a telephoto lens. We show that even such combination can be efficiently used:
-
-<table style="margin: 0px auto;">
-	<tr>
-		<td>Wide</td>
-		<td>Zoom</td>
-		<td>Undistorted</td>
-	</tr>
-	<tr>
-		<td><img src="imgs/wide_features.jpg" height="150"/></td>
-		<td><img src="imgs/narrow_features.jpg" height="150"/></td>
-		<td><img src="imgs/wide_narrow_undist.jpg" height="150"/></td>
-	</tr>
-</table>
-
-If the motion contains also translation:
-
-<p float="left" align="center">
-<img src="imgs/re_tr17_1.jpg" height="150"/>
-<img src="imgs/re_tr17_2.jpg" height="150"/>
-</p>
-
-We can obtain dense correspondences using e.g. optical flow and using the motion parameters we can compute the depth for each pixel:
-
-<p float="left" align="center">
-<img src="imgs/tr17_depth_fused.png" height="150"/>
-</p>
-
-And backproject to create and undistorted image: 
-
-<p float="left" align="center">
-<img src="imgs/tr17_res.jpg" height="150"/>
-</p>
-
-Note that the quality of the result will depend on the quality of the correspondences. The few artefacts are caused by having imperfect optical flow. We did not use any post-processing methods to remove those artefacts.  
-  
-We can also correct the sparse correspondences and use them in a traditional SfM pipeline to obtain a better 3D reconstruction than with the RS images.
-
-<table style="margin: 0px auto;">
-	<tr>
-		<td>Sparse features image 1</td>
-		<td>Sparse features image 2</td>
-		<td>Undistorted sparse features</td>
-	</tr>
-	<tr>
-		<td><img src="imgs/sparse_cam1.jpg" height="150"/></td>
-		<td><img src="imgs/sparse_cam2.jpg" height="150"/></td>
-		<td><img src="imgs/sparse_undist.png" height="150"/></td>
-	</tr>
-</table>
-
-And here is the result of the 3D reconstruction for the original RS images, our undistorted ones and images captured by a GS camera:
-
-<p float="left" align="center">
-<img src="imgs/sfm.jpg"/>
-</p>
 
 ## The method
-Here is a diagram briefly describing the workflows depending on the motion we want to model.
-<p align="center">
-<img src="imgs/method_poster_section_6dof.png"/>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="imgs/method_poster_section_rot.png"/>
-</p>
+TODO ???
 
 ## License
-Patent pending. For more information please contact: cenek.albl@gmail.com .
+The codes are realeased under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT licence</a>.
