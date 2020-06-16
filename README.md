@@ -27,7 +27,7 @@ We present an extensive comparison of standard, robust, and geometrical informat
 <p align="center">
 <img src="web/images/terrains_scene_table.png" width="70%" style="object-fit: contain;"/>
 </p>
-Parameters are in order: camera model, time to recosntruct 15 images, time to reconstruct all 165 images, number of registered images, number of triangulated 3D points in thousands, number of registered observations in thousands, the reprojection error, distance from GT camera poses in centimeters
+Parameters in previous table are in order: camera model, time to reconstruct 15 images, time to reconstruct all 165 images, number of registered images, number of triangulated 3D points in thousands, number of registered observations in thousands, the mean reprojection error, distance from GT camera poses in centimeters.
 <p align="center">
   <img src="web/images/terrains_scene.png" width="90%" style="object-fit: contain;"/>
 </p>
@@ -60,7 +60,7 @@ The real experiments can be evaluated by yourself on <a href="http://147.32.71.1
 <p align="center">
 <img src="web/images/kitty_scene_table.png" width="70%" style="object-fit: contain;"/>
 </p>
-
+Parameters in previous table are in order: camera model, time to reconstruct 15 images, time to reconstruct all 144 images, number of registered images, number of triangulated 3D points in thousands, number of registered observations in thousands, the mean reprojection error, distance from GT camera poses is unknown.
 <p align="center">
   <img src="web/images/kitty_scene.png" width="90%" style="object-fit: contain;"/>
 </p>
