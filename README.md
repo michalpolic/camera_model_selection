@@ -15,10 +15,6 @@ SfM pipelines require many configuration parameters that are hard to set in prac
 * The ultimate goal of a camera model selection method is to select a "good" model where (i) all images are registered, (ii) the reprojection error is minimal, and (iii) the number of parameters is small. This goal is very hard to reach in practice.
 
 <p align="center">
-<img src="web/images/terrains_scene_table.png" width="90%" style="object-fit: contain;"/>
-</p>
-
-<p align="center">
 <img src="web/images/model_comparison.png" width="90%" style="object-fit: contain;"/>
 </p>
 
@@ -27,6 +23,10 @@ We present an extensive comparison of standard, robust, and geometrical informat
 * Significantly increase in the reconstruction quality as well as a speedup of the reconstruction process by automatic camera model selection
 * Evaluate the quality of the scene by Accuracy-based Criterion (AC)
 * Propose a model Selection method (ACS) and fine-tuned learned LACS method for radial distortion model selection
+
+<p align="center">
+<img src="web/images/terrains_scene_table.png" width="70%" style="object-fit: contain;"/>
+</p>
 
 <p align="center">
   <img src="web/images/terrains_scene.png" width="90%" style="object-fit: contain;"/>
@@ -58,7 +58,7 @@ The "good" camera model for real data is rarely known, and therefore we evaluate
 The real experiments can be evaluated by yourself on <a href="http://147.32.71.15">DEMO WEBPAGE</a>. We provide here two examples of selected camera models for wide known datasets, <a href="https://www.eth3d.net">ETH3D dataset</a> and <a href="http://www.cvlibs.net/datasets/kitti">KITTI dataset</a>.
 
 <p align="center">
-<img src="web/images/kitty_scene_table.png" width="90%" style="object-fit: contain;"/>
+<img src="web/images/kitty_scene_table.png" width="70%" style="object-fit: contain;"/>
 </p>
 
 <p align="center">
