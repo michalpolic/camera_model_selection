@@ -57,8 +57,16 @@ The camera model for real data is unknow and therefore we evaluated correctnes o
 <p align="center">
   <img src="web/images/synthetic_01.png" height="200"/>
 </p>
-<p align="center"> 
-  <img src="web/images/synthetic_02.png" height="200"/>
+
+The real experiments can be evaluated by yourself on DEMO WEBPAGE. We provide here some examples of selected camera models for wide known datasets.
+
+TOOD: update image examples
+<p align="center">
+  <img src="web/images/synthetic_01.png" width="90%"/>
+</p>
+
+<p align="center">
+  <img src="web/images/synthetic_01.png" height="90%"/>
 </p>
 
 
