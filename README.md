@@ -27,7 +27,7 @@ We present an extensive comparison of standard, robust, and geometrical informat
 <p align="center">
 <img src="web/images/terrains_scene_table.png" width="70%" style="object-fit: contain;"/>
 </p>
-
+Parameters are in order: camera model, time to recosntruct 15 images, time to reconstruct all 165 images, number of registered images, number of triangulated 3D points in thousands, number of registered observations in thousands, the reprojection error, distance from GT camera poses in centimeters
 <p align="center">
   <img src="web/images/terrains_scene.png" width="90%" style="object-fit: contain;"/>
 </p>
