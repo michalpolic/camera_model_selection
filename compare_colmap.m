@@ -29,7 +29,7 @@
 %% 1) setup paths, settings
 % settings
 setting = struct();
-setting.num_threads = 28;
+setting.num_threads = 4;
 
 init_env_server;        % load paths 
 write_status(fullfile(results_dir,'status.txt'), sprintf('Start model evaluation ... </br>\n'))
