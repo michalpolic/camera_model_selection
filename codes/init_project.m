@@ -9,7 +9,6 @@ function [ reconstr_database, sparse_reconstr ] = init_project( project_dir, dat
     reconstr_database = fullfile(project_dir,'database.db');
     
     % establish connection to the database
-    javaaddpath('/home/policmic/documents/libs/sqlite-jdbc-3.8.7.jar');
     conn = database(reconstr_database,[],[],'org.sqlite.JDBC',sprintf('jdbc:sqlite:%s',reconstr_database)); 
     cameras = fetch(conn,'SELECT camera_id,params,width,height FROM cameras');
     

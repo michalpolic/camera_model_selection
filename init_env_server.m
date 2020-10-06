@@ -1,5 +1,6 @@
 rng('shuffle');
 addpath('/home/policmic/documents/libs/usfm.github.io/build/src');
+javaaddpath('/home/policmic/documents/libs/sqlite-jdbc-3.8.7.jar');
 
 if isempty(gcp('nocreate'))
     parpool(setting.num_threads);

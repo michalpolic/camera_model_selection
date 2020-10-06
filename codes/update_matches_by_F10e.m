@@ -10,7 +10,6 @@ function rd_d = update_matches_by_F10e( database_path, imgs_dir, setting, result
     write_status(fullfile(results_dir,'status.txt'), sprintf('> update verified matches by F10e ... '))
 
     % establish connection to the database
-    javaaddpath('/home/policmic/documents/libs/sqlite-jdbc-3.8.7.jar');
     conn = database(database_path,[],[],'org.sqlite.JDBC',sprintf('jdbc:sqlite:%s',database_path)); 
     
     % load the number of images
