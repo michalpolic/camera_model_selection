@@ -13,8 +13,13 @@ function [ res, scene ] = eval_quality( res, sparse_reconstr, colmap_prexif, gt_
         res.failed = 0;
     end
     actual_path = pwd;
-    cd(fullfile(colmap_prexif,'lib','colmap')); 
-    colmap_executable = strrep(fullfile(colmap_prexif,'bin','colmap'),'\','/');
+    if exist(fullfile(colmap_prexif,'lib'),'dir')
+        cd(fullfile(colmap_prexif,'lib','colmap')); 
+        colmap_executable = strrep(fullfile(colmap_prexif,'bin','colmap'),'\','/');
+    else
+        cd(colmap_prexif); 
+        colmap_executable = strrep(fullfile(colmap_prexif,'colmap'),'\','/');
+    end
     nimgs = zeros(1, length(directories));
     for i = 1:length(directories)
         rec_dir = fullfile(directories(i).folder,directories(i).name);

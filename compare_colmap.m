@@ -22,13 +22,16 @@
 % clear all; close all;
 % 
 % % testing setup 
-% queue_dir = '/home/policmic/data/queue/some_cookie_hash_01';
-% % queue_dir='/local/usfm/web/usfm_web/uploads/8cdd02e8c4bef50e15ba5fc50d4ea3cbb911cc36';
-
+queue_dir = 'd:/Dropbox/School/CVPR2020/datasetsCMS/uploads/some_cookie_hash_01';
 
 %% 1) setup paths, settings
 % settings
+addpath('d:/Dropbox/School/LADIO/USfM/build/src/Release');
+javaaddpath('d:/Dropbox/School/CVPR2020/sqlite-jdbc-3.8.7.jar');
+colmap_prexif = 'd:/Dropbox/Software/colmap/build/src/exe/Release';
+
 setting = struct();
+setting.voc_tree = 'd:/Dropbox/School/CVPR2020/tmp_vocab_tree_flickr100K_words32K.bin';
 setting.num_threads = 4;
 
 init_env_server;        % load paths 
@@ -39,9 +42,7 @@ setting.reproj_threshold = [0.5 1 1.5 2];
 setting.cam_model = 'RADIAL';
 setting.cam_models = {'SIMPLE_PINHOLE','SIMPLE_RADIAL','RADIAL','RADIAL3','RADIAL4', ...
                     'RADIAL1_DIVISION1','RADIAL2_DIVISION2','RADIAL3_DIVISION3'};    
-                        
-setting.voc_tree = fullfile(colmap_prexif,'bin','tmp_vocab_tree_flickr100K_words32K.bin');
-
+                       
 % F10e ransac parameters
 setting.useF10e = true;
 setting.method = getmethod_F10e;
@@ -94,8 +95,13 @@ write_status(fullfile(results_dir,'status.txt'), newline)
 tic;
 cmdout = cell(length(setting.cam_models),1);
 actual_path = pwd;
-cd(fullfile(colmap_prexif,'lib','colmap')); 
-colmap_executable = strrep(fullfile(colmap_prexif,'bin','colmap'),'\','/');
+if exist(fullfile(colmap_prexif,'lib','colmap'))
+    cd(fullfile(colmap_prexif,'lib','colmap')); 
+    colmap_executable = strrep(fullfile(colmap_prexif,'bin','colmap'),'\','/');
+else
+    cd(colmap_prexif); 
+    colmap_executable = strrep(fullfile(colmap_prexif,'colmap'),'\','/');
+end
 for j = 1:length(setting.cam_models)
     fprintf('SfM for dataset: %s, model: %s\n',datset_name, setting.cam_models{j})
     write_status(fullfile(results_dir,'status.txt'), sprintf('> run colmap SfM for %s</br>\n',setting.cam_models{j}))

@@ -1,6 +1,5 @@
 rng('shuffle');
-addpath('/home/policmic/documents/libs/usfm.github.io/build/src');
-javaaddpath('/home/policmic/documents/libs/sqlite-jdbc-3.8.7.jar');
+
 
 if isempty(gcp('nocreate'))
     parpool(setting.num_threads);
@@ -23,7 +22,6 @@ if exist(fullfile(pwd,'external_functions','F10-0.1','matlab','vl'),'dir')
 end
 
 % absolute server paths
-colmap_prexif = '/home/policmic/documents/libs/colmap-install';
 if exist(colmap_prexif,'dir')
     addpath(colmap_prexif);
 end

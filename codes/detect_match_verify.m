@@ -11,14 +11,12 @@ function database_path = detect_match_verify( colmap_root_path, project_dir, cam
     if ~exist(database_path,'dir') 
         % setup colmap run path
         actual_path = pwd;
-        if exist(fullfile(colmap_root_path,'colmap.exe'),'file')        % custom build
-            cd(colmap_root_path);
-            colmap_executable = fullfile(colmap_root_path,'colmap.exe');
-        elseif exist(fullfile(colmap_root_path,'lib'),'dir') &&  exist(fullfile(colmap_root_path,'bin'),'dir') % downloaded binaries
+        if exist(fullfile(colmap_root_path,'lib'),'dir')
             cd(fullfile(colmap_root_path,'lib','colmap'));                       
             colmap_executable = strrep(fullfile(colmap_root_path,'bin','colmap'),'\','/');
-        else
-            error('Incorrect colmap_root_path.')
+        else       % custom build
+            cd(colmap_root_path);
+            colmap_executable = fullfile(colmap_root_path,'colmap');
         end
 
         %extract features

@@ -57,7 +57,9 @@ function rd_d = update_matches_by_F10e( database_path, imgs_dir, setting, result
             match_ids(k,:) = [i,j];
             img_pair_id = to_pair_id(img_ids(i), img_ids(j));
             data = fetch(conn,sprintf('SELECT rows,cols,data FROM matches WHERE pair_id=%d',img_pair_id));
-            pair_matches{k} = reshape(typecast( cell2mat(data{1,3}) , 'uint32'),data{1,2},data{1,1}) + 1;  % indexes from 1
+            if ~isempty(data)
+                pair_matches{k} = reshape(typecast( cell2mat(data{1,3}) , 'uint32'),data{1,2},data{1,1}) + 1;  % indexes from 1
+            end
 %             % switch according ids
 %             if img_ids(i) > img_ids(j)  
 %                 pair_matches{k} = pair_matches{k}([2,1],:);
