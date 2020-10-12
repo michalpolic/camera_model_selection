@@ -17,11 +17,11 @@ function rd_d = update_matches_by_F10e( database_path, imgs_dir, setting, result
     img_ids = table2array(images(:,1));
     img_names = images{:,2};
     img_info = cell(size(img_names,1),1);
-    warning('off','MATLAB:imagesci:tifftagsread:badTagValueDivisionByZero');
+    warning('off');
     for i = 1:size(img_names,1)
         img_info{i} = imfinfo(fullfile(imgs_dir,img_names{i}));
     end
-    warning('on','MATLAB:imagesci:tifftagsread:badTagValueDivisionByZero');
+    warning('on');
     
     % load info about cameras
     cameras = fetch(conn,'SELECT camera_id,params,width,height FROM cameras');
@@ -77,7 +77,7 @@ function rd_d = update_matches_by_F10e( database_path, imgs_dir, setting, result
     inliers_img2 = -ones(max_keypoints,nchoosek(N, 2));
     image_pairs_E = zeros(9,nchoosek(N, 2));
     image_pairs_F = zeros(9,nchoosek(N, 2));
-    parfor k = 1:size(match_ids,1)
+    parfor k = 1:size(match_ids,1)         % 
         fprintf('> process pair %d/%d ... \n',k,size(matches,1))   
         img1_id = img_ids(match_ids(k,1));
         img2_id = img_ids(match_ids(k,2));
