@@ -47,7 +47,7 @@ function rd_d = update_matches_by_F10e( database_path, imgs_dir, setting, result
         keypoints{i} = ks;
     end
        
-    % load all matches and verified matches
+    % load all tentative matches
     k = 1;
     matches = cell(nchoosek(N, 2), 1);
     match_ids = zeros(nchoosek(N, 2),2);
