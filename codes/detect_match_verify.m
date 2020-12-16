@@ -1,4 +1,4 @@
-function database_path = detect_match_verify( colmap_root_path, project_dir, cam_model, max_error, voc_tree, results_dir )
+function database_path = detect_match_verify( colmap_root_path, project_dir, cam_model, max_error, voc_tree, results_dir, use_gpu )
 %DETECT_MATCH_VERIFY - run colmap
 
     % test the input directories
@@ -17,6 +17,10 @@ function database_path = detect_match_verify( colmap_root_path, project_dir, cam
         else       % custom build
             cd(colmap_root_path);
             colmap_executable = fullfile(colmap_root_path,'colmap');
+            % linux - custom build
+            if exist(fullfile(colmap_root_path,'..','lib','colmap'),'dir')
+                addpath(fullfile(colmap_root_path,'..','lib','colmap'));
+            end
         end
 
         %extract features
@@ -26,8 +30,9 @@ function database_path = detect_match_verify( colmap_root_path, project_dir, cam
                                 ' --image_path %s --ImageReader.camera_model %s ' ...
                                 ' --SiftExtraction.estimate_affine_shape 1 ' ...
                                 ' --SiftExtraction.domain_size_pooling 1 --ImageReader.single_camera 1' ...
-                                ' --SiftExtraction.max_num_features 2048'],...
-                                colmap_executable, database_path, images_dir, cam_model));
+                                ' --SiftExtraction.max_num_features 2048' ...
+                                ' --SiftExtraction.use_gpu %d'],...
+                                colmap_executable, database_path, images_dir, cam_model, use_gpu));
         runtime = toc;
         fprintf('%.2fsec\n',runtime)
         write_status(fullfile(results_dir,'status.txt'), sprintf('%.2fsec</br>\n',runtime))
@@ -37,8 +42,9 @@ function database_path = detect_match_verify( colmap_root_path, project_dir, cam
         fprintf('> colmap matching and verification ... ')
         write_status(fullfile(results_dir,'status.txt'), '> colmap matching and verification ... ')
         [~,~] = system(sprintf(['%s  vocab_tree_matcher --database_path %s ' ...
-                                ' --SiftMatching.max_error %d --VocabTreeMatching.vocab_tree_path %s'],...
-                                colmap_executable,database_path,max_error,voc_tree));
+                                ' --SiftMatching.max_error %d --VocabTreeMatching.vocab_tree_path %s ' ...
+                                ' --SiftMatching.use_gpu %d'],...
+                                colmap_executable,database_path,max_error,voc_tree,use_gpu));
         runtime = toc;
         fprintf('%.2fsec\n',runtime)
         write_status(fullfile(results_dir,'status.txt'), sprintf('%.2fsec</br>\n',runtime))

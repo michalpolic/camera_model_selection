@@ -22,17 +22,16 @@
 % clear all; close all;
 % 
 % % testing setup 
-queue_dir = 'd:/Dropbox/School/CVPR2020/datasetsCMS/uploads/some_cookie_hash_01';
+queue_dir = '/home/michal/CMS/uploads/test01';
 
 %% 1) setup paths, settings
-% settings
-addpath('d:/Dropbox/School/LADIO/USfM/build/src/Release');
-javaaddpath('d:/Dropbox/School/CVPR2020/sqlite-jdbc-3.8.7.jar');
-colmap_prexif = 'd:/Dropbox/Software/colmap/build/src/exe/Release';
-
-setting = struct();
-setting.voc_tree = 'd:/Dropbox/School/CVPR2020/tmp_vocab_tree_flickr100K_words32K.bin';
-setting.num_threads = 4;
+setting = struct();     % settings
+addpath('/home/michal/usfm.github.io/build/src');
+javaaddpath('/home/michal/sqlite-jdbc-3.8.7.jar');
+colmap_prexif = '/home/colmap/install';
+setting.voc_tree = '/home/michal/vocab_tree_flickr100K_words32K.bin';
+setting.use_gpu = false;    % cannot use GPU in VM VirtualBox
+setting.num_threads = 4;    % number of thread should be smaller or equal available threads
 
 init_env_server;        % load paths 
 write_status(fullfile(results_dir,'status.txt'), sprintf('Start model evaluation ... </br>\n'))
@@ -70,7 +69,7 @@ res = struct();
 % 2a) detect keypoints, find and verify matches
 tic;
 imgs_dir = fullfile(processing_dir,'images');
-database_path = detect_match_verify(colmap_prexif, processing_dir, setting.cam_model, setting.ransac_threshold, setting.voc_tree, results_dir);  
+database_path = detect_match_verify(colmap_prexif, processing_dir, setting.cam_model, setting.ransac_threshold, setting.voc_tree, results_dir, setting.use_gpu);  
 if setting.useF10e
     rdF10e = update_matches_by_F10e(database_path, imgs_dir, setting, results_dir);
 end

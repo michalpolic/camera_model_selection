@@ -65,6 +65,8 @@ Parameters in previous table are in order: camera model, time to reconstruct 15 
   <img src="web/images/kitty_scene.png" width="90%" style="object-fit: contain;"/>
 </p>
 
+## Installation
+How to run the code is described step by step <a href="https://docs.google.com/document/d/1glTc6rPIGLCy6MJkULuIO7N40oM-SSW0G2vMlneYB7s/edit?usp=sharing">here</a>.
 
 ## License
 The codes are realeased under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT licence</a>.
@@ -79,6 +81,7 @@ window.addEventListener('load', function () {
   end
 });
 </script>
+
 
 
 
